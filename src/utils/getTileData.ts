@@ -12,7 +12,7 @@ const getTileData = (board: Board, prevBoard?: Board): TileData[] => {
     for (let col = 0; col < board[row].length; col++) {
       const tile = board[row][col];
       if (tile) {
-        const prevTileData = prevTileDataMap.get(tile.value);
+        const prevTileData = prevTileDataMap.get(tile.id);
         tileData.push({
           ghost: false,
           id: tile.id,
@@ -28,6 +28,7 @@ const getTileData = (board: Board, prevBoard?: Board): TileData[] => {
               ghost: true,
               id: tile.mergedId,
               value: ghostPrevData.value,
+              previousValue: ghostPrevData.value,
               position: { row, col },
               previousPosition: ghostPrevData.position,
             });

@@ -1,3 +1,33 @@
+@keyframes tile_spawned {
+  0% {
+    transform: scale(0);
+  }
+  33% {
+    transform: scale(0.1);
+  }
+  66% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes merged_into {
+  0% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(1);
+  }
+  66% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .game_container {
   background-color: #bbac9f;
   border-radius: 10px;
@@ -38,6 +68,13 @@
   font-size: 4em;
   font-weight: bold;
   font-family: 'Brush Script MT', cursive;
+}
+
+.tile.new {
+  animation: tile_spawned 300ms ease-in-out;
+}
+.tile.merged_into {
+  animation: merged_into 300ms ease-in-out;
 }
 
 .tile.value_2 {

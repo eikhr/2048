@@ -1,4 +1,5 @@
 import { BoardMeta, Position } from '../../types';
+import setTilePosition from './setTilePosition';
 
 const baseTileElements = (
   position: Position,
@@ -11,8 +12,7 @@ const baseTileElements = (
   tileContainer.classList.add('tile_container');
   tileElement.classList.add('tile');
 
-  tileContainer.style.top = `${(position.row * 100) / boardMeta.rows}%`;
-  tileContainer.style.left = `${(position.col * 100) / boardMeta.cols}%`;
+  setTilePosition(tileContainer, position, boardMeta);
   tileContainer.style.width = `${100 / boardMeta.cols}%`;
   tileContainer.style.height = `${100 / boardMeta.rows}%`;
 
