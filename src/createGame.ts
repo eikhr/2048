@@ -1,8 +1,19 @@
-import { Direction, createGame as createGameData, Game } from '2048-engine';
+import {
+  Direction,
+  createGame as createGameData,
+  Game,
+  GameState,
+} from '2048-engine';
 import createKeyDownHandler from './interaction/createKeyDownHandler';
 import createBoard from './createBoard';
 
-const createGame = (): Game & { htmlElement: HTMLElement } => {
+interface Options {
+  onMoved?: (newState: GameState) => void;
+}
+
+const createGame = (
+  options: Options = {}
+): Game & { htmlElement: HTMLElement } => {
   const gameData = createGameData();
 
   const gameBoard = createBoard(gameData.currentState);
@@ -10,14 +21,13 @@ const createGame = (): Game & { htmlElement: HTMLElement } => {
   const move = (direction: Direction) => {
     const newState = gameData.move(direction);
     gameBoard.update(newState);
-    return newState;
+    options.onMoved && options.onMoved(newState);
   };
 
   window.addEventListener('keydown', createKeyDownHandler(move));
 
   return {
     ...gameData,
-    move,
     htmlElement: gameBoard.htmlElement,
   };
 };
