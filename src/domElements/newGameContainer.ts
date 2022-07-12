@@ -1,5 +1,6 @@
 import createBackgroundTiles from './createBackgroundTiles';
 import { BoardMeta } from '../types';
+import createStylesheet from './createStylesheet';
 
 interface GameContainer {
   rootElement: HTMLElement;
@@ -12,6 +13,9 @@ const newGameContainer = (boardMeta: BoardMeta): GameContainer => {
 
   const rootElement = document.createElement('div');
   rootElement.classList.add('game_container');
+
+  const stylesheet = createStylesheet();
+  rootElement.appendChild(stylesheet);
 
   const resizeHelper = document.createElement('div');
   resizeHelper.classList.add('resize_helper');
