@@ -1,0 +1,87 @@
+.game_container {
+  background-color: #bbac9f;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+  padding: 10px;
+}
+
+.resize_helper {
+  position: relative;
+  width: 100%;
+}
+
+.tiles_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.tile_container {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.tile {
+  background: #000;
+  color: #fff4cc;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 4em;
+  font-weight: bold;
+  font-family: 'Brush Script MT', cursive;
+}
+
+.tile.value_2 {
+  background: #eee4da;
+  color: #504a43;
+}
+
+.tile.value_4 {
+  background: #eee1c9;
+  color: #504a43;
+}
+
+.tile.value_8 {
+  background: #f3b27a;
+}
+
+.tile.value_16 {
+  background: #f69664;
+}
+
+.tile.value_32 {
+  background: #f77c5f;
+}
+
+.tile.value_64 {
+  background: #f75f3b;
+}
+
+.tile.value_128 {
+  background: #edd073;
+}
+
+.tile.value_256 {
+  background: #edcc62;
+}
+
+.tile.value_512 {
+  background: #edc950;
+}
+
+.tile.value_1024 {
+  background: #edc53f;
+}
+
+.tile.value_2048 {
+  background: #edc22e;
+}
