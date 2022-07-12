@@ -19,6 +19,9 @@ const newGameContainer = (boardMeta: BoardMeta): GameContainer => {
 
   const resizeHeight = () => {
     resizeHelper.style.height = `${rootElement.clientWidth * aspectRatio}px`;
+    resizeHelper.style.fontSize = `${
+      (rootElement.clientWidth / boardMeta.cols) * 0.5
+    }px`;
   };
 
   resizeHeight();
