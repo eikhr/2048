@@ -1,50 +1,24 @@
-import {
-  Direction,
-  createGame as createGameData,
-  Game,
-  GameState,
-} from '2048-engine';
-import newGameContainer from './domElements/newGameContainer';
+import { Direction, createGame as createGameData, Game } from '2048-engine';
 import createKeyDownHandler from './interaction/createKeyDownHandler';
-import { BoardMeta } from './types';
-import getTileData from './utils/getTileData';
-import newTileElement from './domElements/tile/newTileElement';
+import createBoard from './createBoard';
 
-const createGame = (): Game & { gameElement: HTMLElement } => {
+const createGame = (): Game & { htmlElement: HTMLElement } => {
   const gameData = createGameData();
-  const boardMeta: BoardMeta = {
-    rows: gameData.currentState.board.length,
-    cols: gameData.currentState.board[0].length,
-  };
-  const gameContainer = newGameContainer(boardMeta);
 
-  const updateGameGui = (
-    newGameState: GameState,
-    prevGameState?: GameState
-  ) => {
-    gameContainer.clearTiles();
-    gameContainer.addTiles(
-      getTileData(newGameState.board, prevGameState?.board).map((tile) =>
-        newTileElement(tile, boardMeta)
-      )
-    );
-  };
+  const gameBoard = createBoard(gameData.currentState);
 
   const move = (direction: Direction) => {
-    const prevGameState = gameData.currentState;
-    const gameState = gameData.move(direction);
-    updateGameGui(gameState, prevGameState);
-    return gameState;
+    const newState = gameData.move(direction);
+    gameBoard.update(newState);
+    return newState;
   };
 
   window.addEventListener('keydown', createKeyDownHandler(move));
 
-  updateGameGui(gameData.currentState);
-
   return {
     ...gameData,
     move,
-    gameElement: gameContainer.rootElement,
+    htmlElement: gameBoard.htmlElement,
   };
 };
 
