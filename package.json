@@ -10,22 +10,17 @@
     "lint": "yarn lint:prettier && yarn lint:eslint",
     "lint:prettier": "prettier --check 'src/**/*.{ts,css}'",
     "lint:eslint": "eslint src/**/*.ts",
-    "test": "echo 'No tests specified'",
     "build": "tsc -p tsconfig.json"
   },
   "dependencies": {
     "2048-engine": "^0.1.1"
   },
   "devDependencies": {
-    "@types/jest": "^28.1.4",
     "@types/random-seed": "^0.3.3",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
     "eslint": "^8.19.0",
-    "jest": "^28.1.2",
     "prettier": "^2.7.1",
-    "ts-jest": "^28.0.5",
-    "ts-node": "^10.8.2",
     "typescript": "^4.7.4"
   },
   "prettier": {
