@@ -35,7 +35,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/eikhr/2048-board-renderer.git"
+    "url": "https://github.com/eikhr/react-2048.git"
   },
   "keywords": ["2048", "game", "GUI", "board", "renderer"]
 }
