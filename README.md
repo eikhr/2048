@@ -1,4 +1,5 @@
 # 2048 board renderer
+![Build](https://github.com/eikhr/2048-board-renderer/actions/workflows/main.yml/badge.svg)
 
 Package for easily rendering boards from the game [2048](https://github.com/gabrielecirulli/2048). Uses data in the format provided from [`2048-engine`](https://github.com/eikhr/2048-engine) to render the board. 
 
