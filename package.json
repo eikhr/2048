@@ -4,6 +4,7 @@
   "description": "2048 board renderer",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": ["dist/**"],
   "scripts": {
     "prettier": "prettier --write 'src/**/*.{ts,css}'",
     "lint": "yarn lint:prettier && yarn lint:eslint",
