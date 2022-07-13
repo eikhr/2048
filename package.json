@@ -13,7 +13,7 @@
     "build": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "2048-engine": "file:../2048-engine"
+    "2048-engine": "^0.1.1"
   },
   "devDependencies": {
     "@types/jest": "^28.1.4",

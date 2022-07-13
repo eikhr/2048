@@ -2,8 +2,10 @@
 # yarn lockfile v1
 
 
-"2048-engine@file:../2048-engine":
-  version "0.0.0"
+"2048-engine@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/2048-engine/-/2048-engine-0.1.1.tgz#b4a00f3739d13bd2c9c39d56033cf5e9ed73ad68"
+  integrity sha512-MppxN5pi4AQ84EwkJN6GUt10QMB7LVtPLvh64XRx6nvJ8N9Jf18X/jvYF02gtbLcrmw/lOe7hL6/SDPDENfasw==
   dependencies:
     random-seed "^0.3.0"
 
