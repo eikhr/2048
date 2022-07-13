@@ -1,7 +1,7 @@
 {
-  "name": "2048",
+  "name": "2048-board-renderer",
   "version": "0.0.0",
-  "description": "2048 game",
+  "description": "2048 board renderer",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -31,5 +31,10 @@
     "singleQuote": true
   },
   "author": "Eik Hvattum Røgeberg",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eikhr/2048-board-renderer.git"
+  },
+  "keywords": ["2048", "game", "GUI", "board", "renderer"]
 }
