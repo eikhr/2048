@@ -1,30 +1,28 @@
 import newGameContainer from './domElements/newGameContainer';
-import { GameState } from '2048-engine';
+import { Board } from '2048-engine';
 import { BoardMeta } from './types';
 import createTiles from './utils/createTiles';
 
 interface GameBoard {
   htmlElement: HTMLElement;
-  update: (newGameState: GameState) => void;
+  update: (newBoard: Board) => void;
 }
 
-const createBoard = (gameState: GameState): GameBoard => {
+const createBoard = (board: Board): GameBoard => {
   const boardMeta: BoardMeta = {
-    rows: gameState.board.length,
-    cols: gameState.board[0].length,
+    rows: board.length,
+    cols: board[0].length,
   };
 
   const gameContainer = newGameContainer(boardMeta);
-  gameContainer.addTiles(createTiles(boardMeta, gameState.board));
+  gameContainer.addTiles(createTiles(boardMeta, board));
 
-  let currentState = gameState;
+  let currentBoard = board;
 
-  const update = (newGameState: GameState) => {
+  const update = (newBoard: Board) => {
     gameContainer.clearTiles();
-    gameContainer.addTiles(
-      createTiles(boardMeta, newGameState.board, currentState.board)
-    );
-    currentState = newGameState;
+    gameContainer.addTiles(createTiles(boardMeta, newBoard, currentBoard));
+    currentBoard = newBoard;
   };
 
   return { htmlElement: gameContainer.rootElement, update };
